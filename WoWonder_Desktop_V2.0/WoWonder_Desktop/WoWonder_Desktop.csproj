@@ -1,0 +1,1022 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\CefSharp.Wpf.57.0.0\build\CefSharp.Wpf.props" Condition="Exists('..\packages\CefSharp.Wpf.57.0.0\build\CefSharp.Wpf.props')" />
+  <Import Project="..\packages\CefSharp.Common.57.0.0\build\CefSharp.Common.props" Condition="Exists('..\packages\CefSharp.Common.57.0.0\build\CefSharp.Common.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{19C7F7BA-079F-4E7F-AA24-700E931C6CF3}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>WoWonder_Desktop</RootNamespace>
+    <AssemblyName>Wowonder</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>8</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>WoWonder_Desktop.App</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Images\icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>777A99D3E0EE007CF8A32AC06DAB4B56B67F1B32</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>WoWonder_Desktop_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MaterialDesignColors, Version=1.1.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignColors.1.1.2\lib\net45\MaterialDesignColors.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignThemes.Wpf, Version=2.3.0.823, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignThemes.2.3.0.823\lib\net45\MaterialDesignThemes.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Windows.Shell, Version=3.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Windows.Shell.3.0.1.0\lib\net40\Microsoft.Windows.Shell.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PresentationFramework.Aero" />
+    <Reference Include="PropertyChanged, Version=1.53.0.0, Culture=neutral, PublicKeyToken=ee3ee20bcf148ddd, processorArchitecture=MSIL">
+      <HintPath>..\packages\PropertyChanged.Fody.1.53.0\lib\netstandard10\PropertyChanged.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="SQLite-net, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\sqlite-net-pcl.1.3.3\lib\netstandard1.1\SQLite-net.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.batteries_green, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a84b7dcfb1391f7f, processorArchitecture=MSIL">
+      <HintPath>..\packages\SQLitePCLRaw.bundle_green.1.1.5\lib\net45\SQLitePCLRaw.batteries_green.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.batteries_v2, Version=1.0.0.0, Culture=neutral, PublicKeyToken=8226ea5df37bcae9, processorArchitecture=MSIL">
+      <HintPath>..\packages\SQLitePCLRaw.bundle_green.1.1.5\lib\net45\SQLitePCLRaw.batteries_v2.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=1488e028ca7ab535, processorArchitecture=MSIL">
+      <HintPath>..\packages\SQLitePCLRaw.core.1.1.5\lib\net45\SQLitePCLRaw.core.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.provider.e_sqlite3, Version=1.0.0.0, Culture=neutral, PublicKeyToken=9c301db686d0bd12, processorArchitecture=MSIL">
+      <HintPath>..\packages\SQLitePCLRaw.provider.e_sqlite3.net45.1.1.5\lib\net45\SQLitePCLRaw.provider.e_sqlite3.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.0.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ValueTuple, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.3.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WoWonderClient">
+      <HintPath>..\API\WoWonderClient.dll</HintPath>
+    </Reference>
+    <Reference Include="WpfAnimatedGif, Version=1.4.14.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WpfAnimatedGif.1.4.14\lib\net\WpfAnimatedGif.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Core, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xamarin.Forms.2.3.4.224\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xamarin.Forms.2.3.4.224\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Xaml, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xamarin.Forms.2.3.4.224\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.Xaml.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Controls\Classes.cs" />
+    <Compile Include="Controls\Functions.cs" />
+    <Compile Include="Controls\MemoryVariables.cs" />
+    <Compile Include="Controls\MessageDataTemplate.cs" />
+    <Compile Include="Controls\RTBNavigationService.cs" />
+    <Compile Include="Controls\Stickers.cs" />
+    <Compile Include="Controls\UserDetails.cs" />
+    <Compile Include="Controls\Users.cs" />
+    <Compile Include="Forms\About_Window.xaml.cs">
+      <DependentUpon>About_Window.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Managelocalstrong_Window.xaml.cs">
+      <DependentUpon>Managelocalstrong_Window.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Recieve_Call_Window.xaml.cs">
+      <DependentUpon>Recieve_Call_Window.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Send_Video_Call.xaml.cs">
+      <DependentUpon>Send_Video_Call.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UsersBlocked_Window.xaml.cs">
+      <DependentUpon>UsersBlocked_Window.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Video_Call_Window.xaml.cs">
+      <DependentUpon>Video_Call_Window.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\WelcomePage.xaml.cs">
+      <DependentUpon>WelcomePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Setting_Stickers_Window.xaml.cs">
+      <DependentUpon>Setting_Stickers_Window.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SharedFilesWindow.xaml.cs">
+      <DependentUpon>SharedFilesWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\NotificationsControlWindow.xaml.cs">
+      <DependentUpon>NotificationsControlWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PickColorWindow.xaml.cs">
+      <DependentUpon>PickColorWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UserProfileinfo_Window.xaml.cs">
+      <DependentUpon>UserProfileinfo_Window.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Edit_MyProfile_Window.xaml.cs">
+      <DependentUpon>Edit_MyProfile_Window.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MsgPopupWindow.xaml.cs">
+      <DependentUpon>MsgPopupWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SocialLogin.xaml.cs">
+      <DependentUpon>SocialLogin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Video_MediaPlayer_Window.xaml.cs">
+      <DependentUpon>Video_MediaPlayer_Window.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="language\LocalResources.ar.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LocalResources.ar.resx</DependentUpon>
+    </Compile>
+    <Compile Include="language\LocalResources.de-DE.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LocalResources.de-DE.resx</DependentUpon>
+    </Compile>
+    <Compile Include="language\LocalResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LocalResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="language\LocalResources.es-ES.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LocalResources.es-ES.resx</DependentUpon>
+    </Compile>
+    <Compile Include="language\LocalResources.fr-FR.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LocalResources.fr-FR.resx</DependentUpon>
+    </Compile>
+    <Compile Include="language\LocalResources.id-ID.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LocalResources.id-ID.resx</DependentUpon>
+    </Compile>
+    <Compile Include="language\LocalResources.it-IT.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LocalResources.it-IT.resx</DependentUpon>
+    </Compile>
+    <Compile Include="language\LocalResources.nl-NL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LocalResources.nl-NL.resx</DependentUpon>
+    </Compile>
+    <Compile Include="language\LocalResources.pt-BR.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LocalResources.pt-BR.resx</DependentUpon>
+    </Compile>
+    <Compile Include="language\LocalResources.ru-RU.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LocalResources.ru-RU.resx</DependentUpon>
+    </Compile>
+    <Compile Include="language\LocalResources.tr-TR.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LocalResources.tr-TR.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\W_MobilePage.xaml.cs">
+      <DependentUpon>W_MobilePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\W_StickersNewPage.xaml.cs">
+      <DependentUpon>W_StickersNewPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\W_VideoPage.xaml.cs">
+      <DependentUpon>W_VideoPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Annotations.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="SQLite\DataBase.cs" />
+    <Compile Include="SQLite\SQLiteCommandSender.cs" />
+    <Compile Include="SQLite\SQLite_Entity.cs" />
+    <Page Include="Forms\About_Window.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Managelocalstrong_Window.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Recieve_Call_Window.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Send_Video_Call.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\UsersBlocked_Window.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Video_Call_Window.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\WelcomePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Setting_Stickers_Window.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\SharedFilesWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\NotificationsControlWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\PickColorWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\UserProfileinfo_Window.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Edit_MyProfile_Window.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\Login_Window.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\MsgPopupWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\SocialLogin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\Video_MediaPlayer_Window.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\Helper.cs" />
+    <Compile Include="Forms\Login_Window.xaml.cs">
+      <DependentUpon>Login_Window.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Pages\W_MobilePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\W_StickersNewPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\W_VideoPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\Buttons.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\Cards.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\Colors.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\ToggleButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\Fonts.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\ListBoxView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\MaterialColors.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\TabControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\Texts.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\Windows.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="language\LocalResources.ar.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>LocalResources.ar.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="language\LocalResources.de-DE.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>LocalResources.de-DE.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="language\LocalResources.es-ES.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>LocalResources.es-ES.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="language\LocalResources.fr-FR.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>LocalResources.fr-FR.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="language\LocalResources.id-ID.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>LocalResources.id-ID.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="language\LocalResources.it-IT.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>LocalResources.it-IT.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="language\LocalResources.nl-NL.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>LocalResources.nl-NL.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="language\LocalResources.pt-BR.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>LocalResources.pt-BR.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="language\LocalResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>LocalResources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="language\LocalResources.ru-RU.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>LocalResources.ru-RU.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="language\LocalResources.tr-TR.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>LocalResources.tr-TR.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Resource Include="Fonts\Lato-Black.ttf" />
+    <Resource Include="Fonts\Lato-BlackItalic.ttf" />
+    <Resource Include="Fonts\Lato-Bold.ttf" />
+    <Resource Include="Fonts\Lato-BoldItalic.ttf" />
+    <Resource Include="Fonts\Lato-Hairline.ttf" />
+    <Resource Include="Fonts\Lato-HairlineItalic.ttf" />
+    <Resource Include="Fonts\Lato-Heavy.ttf" />
+    <Resource Include="Fonts\Lato-HeavyItalic.ttf" />
+    <Resource Include="Fonts\Lato-Italic.ttf" />
+    <Resource Include="Fonts\Lato-Light.ttf" />
+    <Resource Include="Fonts\Lato-LightItalic.ttf" />
+    <Resource Include="Fonts\Lato-Medium.ttf" />
+    <Resource Include="Fonts\Lato-MediumItalic.ttf" />
+    <Resource Include="Fonts\Lato-Regular.ttf" />
+    <Resource Include="Fonts\Lato-Semibold.ttf" />
+    <Resource Include="Fonts\Lato-SemiboldItalic.ttf" />
+    <Resource Include="Fonts\Lato-Thin.ttf" />
+    <Resource Include="Fonts\Lato-ThinItalic.ttf" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icon.ico" />
+    <Resource Include="Images\WowonderBackroundiamge.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Backgrounds\emoji-background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Backgrounds\44.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Backgrounds\signup_bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Backgrounds\bg2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Emoji_Icons\Angel Emoji.png" />
+    <Resource Include="Images\Emoji_Icons\Angry Emoji.png" />
+    <Resource Include="Images\Emoji_Icons\Angry Face.png" />
+    <Resource Include="Images\Emoji_Icons\Bawling Emoji.png" />
+    <Resource Include="Images\Emoji_Icons\Breaking Heart Emoji.png" />
+    <Resource Include="Images\Emoji_Icons\Cheeky Emoji.png" />
+    <Resource Include="Images\Emoji_Icons\Cool Emoji.png" />
+    <Resource Include="Images\Emoji_Icons\Crazy Emoji.png" />
+    <Resource Include="Images\Emoji_Icons\Cringe Emoji.png" />
+    <Resource Include="Images\Emoji_Icons\Crying Emoji.png" />
+    <Resource Include="Images\Emoji_Icons\Devil Emoji.png" />
+    <Resource Include="Images\Emoji_Icons\Dissatisfied Emoji.png" />
+    <Resource Include="Images\Emoji_Icons\Face With Straight Mouth Emoji.png" />
+    <Resource Include="Images\Emoji_Icons\Flirting Emoji.png" />
+    <Resource Include="Images\Emoji_Icons\Happy Face Emoji.png" />
+    <Resource Include="Images\Emoji_Icons\Heart Emoji.png" />
+    <Resource Include="Images\Emoji_Icons\Heart Eyes Emoji.png" />
+    <Resource Include="Images\Emoji_Icons\Heavy Exclamation.png" />
+    <Resource Include="Images\Emoji_Icons\Kissing Emoji.png" />
+    <Resource Include="Images\Emoji_Icons\Laughing Emoji.png" />
+    <Resource Include="Images\Emoji_Icons\Love Heart.png" />
+    <Resource Include="Images\Emoji_Icons\love.png" />
+    <Resource Include="Images\Emoji_Icons\Lovestruck Emoji.png" />
+    <Resource Include="Images\Emoji_Icons\NormalSmile.png" />
+    <Resource Include="Images\Emoji_Icons\Pained Face Emoji.png" />
+    <Resource Include="Images\Emoji_Icons\Puzzled Emoji.png" />
+    <Resource Include="Images\Emoji_Icons\Red Face Emoji.png" />
+    <Resource Include="Images\Emoji_Icons\sad.png" />
+    <Resource Include="Images\Emoji_Icons\Sadface Emoji.png" />
+    <Resource Include="Images\Emoji_Icons\Scream Emoji.png" />
+    <Resource Include="Images\Emoji_Icons\Smile.png" />
+    <Resource Include="Images\Emoji_Icons\Smiling Face.png" />
+    <Resource Include="Images\Emoji_Icons\Sparkling Heart.png" />
+    <Resource Include="Images\Emoji_Icons\Star Emoji.png" />
+    <Resource Include="Images\Emoji_Icons\Straight Faced Emoji.png" />
+    <Resource Include="Images\Emoji_Icons\Surprised Emoji.png" />
+    <Resource Include="Images\Emoji_Icons\Wink Emoji.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\paper-clip.png" />
+    <Resource Include="Images\photo %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\check-list.png" />
+    <Resource Include="Images\folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\id-card.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Checked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="FodyWeavers.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\faceuser1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Drewie.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\d-avatar.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="WMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Popupsound.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\video_cover.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\chat %281%29.png" />
+    <Resource Include="Images\chat %282%29.png" />
+    <Resource Include="Images\chat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Stickers\Sticker16.png" />
+    <Resource Include="Images\Stickers\Sticker17.png" />
+    <Resource Include="Images\Stickers\Sticker18.png" />
+    <Resource Include="Images\Stickers\Sticker19.png" />
+    <Resource Include="Images\Stickers\Sticker20.png" />
+    <Resource Include="Images\Stickers\Sticker21.png" />
+    <Resource Include="Images\Stickers\Sticker22.png" />
+    <Resource Include="Images\Stickers\Sticker23.png" />
+    <Resource Include="Images\Stickers\Sticker24.png" />
+    <Resource Include="Images\Stickers\Sticker25.png" />
+    <Resource Include="Images\Stickers\Sticker26.png" />
+    <Resource Include="Images\Stickers\Sticker27.png" />
+    <Resource Include="Images\Stickers\Sticker28.png" />
+    <Resource Include="Images\Stickers\Sticker29.png" />
+    <Resource Include="Images\Stickers\Sticker30.png" />
+    <Resource Include="Images\Stickers\Sticker31.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Stickers\Sticker1.png" />
+    <Resource Include="Images\Stickers\Sticker10.png" />
+    <Resource Include="Images\Stickers\Sticker11.png" />
+    <Resource Include="Images\Stickers\Sticker12.png" />
+    <Resource Include="Images\Stickers\Sticker13.png" />
+    <Resource Include="Images\Stickers\Sticker14.png" />
+    <Resource Include="Images\Stickers\Sticker15.png" />
+    <Resource Include="Images\Stickers\Sticker2.png" />
+    <Resource Include="Images\Stickers\Sticker3.png" />
+    <Resource Include="Images\Stickers\Sticker4.png" />
+    <Resource Include="Images\Stickers\Sticker5.png" />
+    <Resource Include="Images\Stickers\Sticker6.png" />
+    <Resource Include="Images\Stickers\Sticker7.png" />
+    <Resource Include="Images\Stickers\Sticker8.png" />
+    <Resource Include="Images\Stickers\Sticker9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Stickers\Sticker32.png" />
+    <Resource Include="Images\Stickers\Sticker33.png" />
+    <Resource Include="Images\Stickers\Sticker34.png" />
+    <Resource Include="Images\Stickers\Sticker35.png" />
+    <Resource Include="Images\Stickers\Sticker36.png" />
+    <Resource Include="Images\Stickers\Sticker37.png" />
+    <Resource Include="Images\Stickers\Sticker38.png" />
+    <Resource Include="Images\Stickers\Sticker39.png" />
+    <Resource Include="Images\Stickers\Sticker40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Stickers\Sticker41.png" />
+    <Resource Include="Images\Stickers\Sticker42.png" />
+    <Resource Include="Images\Stickers\Sticker43.png" />
+    <Resource Include="Images\Stickers\Sticker44.png" />
+    <Resource Include="Images\Stickers\Sticker45.png" />
+    <Resource Include="Images\Stickers\Sticker46.png" />
+    <Resource Include="Images\Stickers\Sticker47.png" />
+    <Resource Include="Images\Stickers\Sticker48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Stickers\Sticker100.png" />
+    <Resource Include="Images\Stickers\Sticker101.png" />
+    <Resource Include="Images\Stickers\Sticker102.png" />
+    <Resource Include="Images\Stickers\Sticker103.png" />
+    <Resource Include="Images\Stickers\Sticker104.png" />
+    <Resource Include="Images\Stickers\Sticker105.png" />
+    <Resource Include="Images\Stickers\Sticker106.png" />
+    <Resource Include="Images\Stickers\Sticker107.png" />
+    <Resource Include="Images\Stickers\Sticker108.png" />
+    <Resource Include="Images\Stickers\Sticker109.png" />
+    <Resource Include="Images\Stickers\Sticker110.png" />
+    <Resource Include="Images\Stickers\Sticker111.png" />
+    <Resource Include="Images\Stickers\Sticker112.png" />
+    <Resource Include="Images\Stickers\Sticker113.png" />
+    <Resource Include="Images\Stickers\Sticker114.png" />
+    <Resource Include="Images\Stickers\Sticker115.png" />
+    <Resource Include="Images\Stickers\Sticker116.png" />
+    <Resource Include="Images\Stickers\Sticker117.png" />
+    <Resource Include="Images\Stickers\Sticker118.png" />
+    <Resource Include="Images\Stickers\Sticker119.png" />
+    <Resource Include="Images\Stickers\Sticker120.png" />
+    <Resource Include="Images\Stickers\Sticker121.png" />
+    <Resource Include="Images\Stickers\Sticker122.png" />
+    <Resource Include="Images\Stickers\Sticker123.png" />
+    <Resource Include="Images\Stickers\Sticker124.png" />
+    <Resource Include="Images\Stickers\Sticker125.png" />
+    <Resource Include="Images\Stickers\Sticker126.png" />
+    <Resource Include="Images\Stickers\Sticker127.png" />
+    <Resource Include="Images\Stickers\Sticker128.png" />
+    <Resource Include="Images\Stickers\Sticker129.png" />
+    <Resource Include="Images\Stickers\Sticker130.png" />
+    <Resource Include="Images\Stickers\Sticker131.png" />
+    <Resource Include="Images\Stickers\Sticker132.png" />
+    <Resource Include="Images\Stickers\Sticker133.png" />
+    <Resource Include="Images\Stickers\Sticker134.png" />
+    <Resource Include="Images\Stickers\Sticker135.png" />
+    <Resource Include="Images\Stickers\Sticker136.png" />
+    <Resource Include="Images\Stickers\Sticker137.png" />
+    <Resource Include="Images\Stickers\Sticker138.png" />
+    <Resource Include="Images\Stickers\Sticker139.png" />
+    <Resource Include="Images\Stickers\Sticker140.png" />
+    <Resource Include="Images\Stickers\Sticker141.png" />
+    <Resource Include="Images\Stickers\Sticker142.png" />
+    <Resource Include="Images\Stickers\Sticker143.png" />
+    <Resource Include="Images\Stickers\Sticker144.png" />
+    <Resource Include="Images\Stickers\Sticker145.png" />
+    <Resource Include="Images\Stickers\Sticker146.png" />
+    <Resource Include="Images\Stickers\Sticker147.png" />
+    <Resource Include="Images\Stickers\Sticker148.png" />
+    <Resource Include="Images\Stickers\Sticker149.png" />
+    <Resource Include="Images\Stickers\Sticker150.png" />
+    <Resource Include="Images\Stickers\Sticker151.png" />
+    <Resource Include="Images\Stickers\Sticker152.png" />
+    <Resource Include="Images\Stickers\Sticker153.png" />
+    <Resource Include="Images\Stickers\Sticker154.png" />
+    <Resource Include="Images\Stickers\Sticker155.png" />
+    <Resource Include="Images\Stickers\Sticker156.png" />
+    <Resource Include="Images\Stickers\Sticker157.png" />
+    <Resource Include="Images\Stickers\Sticker158.png" />
+    <Resource Include="Images\Stickers\Sticker159.png" />
+    <Resource Include="Images\Stickers\Sticker160.png" />
+    <Resource Include="Images\Stickers\Sticker161.png" />
+    <Resource Include="Images\Stickers\Sticker162.png" />
+    <Resource Include="Images\Stickers\Sticker163.png" />
+    <Resource Include="Images\Stickers\Sticker164.png" />
+    <Resource Include="Images\Stickers\Sticker165.png" />
+    <Resource Include="Images\Stickers\Sticker166.png" />
+    <Resource Include="Images\Stickers\Sticker167.png" />
+    <Resource Include="Images\Stickers\Sticker168.png" />
+    <Resource Include="Images\Stickers\Sticker169.png" />
+    <Resource Include="Images\Stickers\Sticker170.png" />
+    <Resource Include="Images\Stickers\Sticker171.png" />
+    <Resource Include="Images\Stickers\Sticker172.png" />
+    <Resource Include="Images\Stickers\Sticker173.png" />
+    <Resource Include="Images\Stickers\Sticker174.png" />
+    <Resource Include="Images\Stickers\Sticker175.png" />
+    <Resource Include="Images\Stickers\Sticker176.png" />
+    <Resource Include="Images\Stickers\Sticker177.png" />
+    <Resource Include="Images\Stickers\Sticker178.png" />
+    <Resource Include="Images\Stickers\Sticker179.png" />
+    <Resource Include="Images\Stickers\Sticker180.png" />
+    <Resource Include="Images\Stickers\Sticker181.png" />
+    <Resource Include="Images\Stickers\Sticker182.png" />
+    <Resource Include="Images\Stickers\Sticker183.png" />
+    <Resource Include="Images\Stickers\Sticker184.png" />
+    <Resource Include="Images\Stickers\Sticker185.png" />
+    <Resource Include="Images\Stickers\Sticker186.png" />
+    <Resource Include="Images\Stickers\Sticker187.png" />
+    <Resource Include="Images\Stickers\Sticker188.png" />
+    <Resource Include="Images\Stickers\Sticker189.png" />
+    <Resource Include="Images\Stickers\Sticker190.png" />
+    <Resource Include="Images\Stickers\Sticker191.png" />
+    <Resource Include="Images\Stickers\Sticker192.png" />
+    <Resource Include="Images\Stickers\Sticker193.png" />
+    <Resource Include="Images\Stickers\Sticker194.png" />
+    <Resource Include="Images\Stickers\Sticker195.png" />
+    <Resource Include="Images\Stickers\Sticker196.png" />
+    <Resource Include="Images\Stickers\Sticker197.png" />
+    <Resource Include="Images\Stickers\Sticker198.png" />
+    <Resource Include="Images\Stickers\Sticker199.png" />
+    <Resource Include="Images\Stickers\Sticker200.png" />
+    <Resource Include="Images\Stickers\Sticker201.png" />
+    <Resource Include="Images\Stickers\Sticker202.png" />
+    <Resource Include="Images\Stickers\Sticker203.png" />
+    <Resource Include="Images\Stickers\Sticker204.png" />
+    <Resource Include="Images\Stickers\Sticker205.png" />
+    <Resource Include="Images\Stickers\Sticker206.png" />
+    <Resource Include="Images\Stickers\Sticker207.png" />
+    <Resource Include="Images\Stickers\Sticker208.png" />
+    <Resource Include="Images\Stickers\Sticker209.png" />
+    <Resource Include="Images\Stickers\Sticker210.png" />
+    <Resource Include="Images\Stickers\Sticker211.png" />
+    <Resource Include="Images\Stickers\Sticker212.png" />
+    <Resource Include="Images\Stickers\Sticker213.png" />
+    <Resource Include="Images\Stickers\Sticker214.png" />
+    <Resource Include="Images\Stickers\Sticker215.png" />
+    <Resource Include="Images\Stickers\Sticker216.png" />
+    <Resource Include="Images\Stickers\Sticker217.png" />
+    <Resource Include="Images\Stickers\Sticker218.png" />
+    <Resource Include="Images\Stickers\Sticker219.png" />
+    <Resource Include="Images\Stickers\Sticker220.png" />
+    <Resource Include="Images\Stickers\Sticker221.png" />
+    <Resource Include="Images\Stickers\Sticker222.png" />
+    <Resource Include="Images\Stickers\Sticker223.png" />
+    <Resource Include="Images\Stickers\Sticker224.png" />
+    <Resource Include="Images\Stickers\Sticker225.png" />
+    <Resource Include="Images\Stickers\Sticker226.png" />
+    <Resource Include="Images\Stickers\Sticker227.png" />
+    <Resource Include="Images\Stickers\Sticker228.png" />
+    <Resource Include="Images\Stickers\Sticker229.png" />
+    <Resource Include="Images\Stickers\Sticker230.png" />
+    <Resource Include="Images\Stickers\Sticker231.png" />
+    <Resource Include="Images\Stickers\Sticker232.png" />
+    <Resource Include="Images\Stickers\Sticker233.png" />
+    <Resource Include="Images\Stickers\Sticker234.png" />
+    <Resource Include="Images\Stickers\Sticker49.png" />
+    <Resource Include="Images\Stickers\Sticker50.png" />
+    <Resource Include="Images\Stickers\Sticker51.png" />
+    <Resource Include="Images\Stickers\Sticker52.png" />
+    <Resource Include="Images\Stickers\Sticker53.png" />
+    <Resource Include="Images\Stickers\Sticker54.png" />
+    <Resource Include="Images\Stickers\Sticker55.png" />
+    <Resource Include="Images\Stickers\Sticker56.png" />
+    <Resource Include="Images\Stickers\Sticker57.png" />
+    <Resource Include="Images\Stickers\Sticker58.png" />
+    <Resource Include="Images\Stickers\Sticker59.png" />
+    <Resource Include="Images\Stickers\Sticker60.png" />
+    <Resource Include="Images\Stickers\Sticker61.png" />
+    <Resource Include="Images\Stickers\Sticker62.png" />
+    <Resource Include="Images\Stickers\Sticker63.png" />
+    <Resource Include="Images\Stickers\Sticker64.png" />
+    <Resource Include="Images\Stickers\Sticker65.png" />
+    <Resource Include="Images\Stickers\Sticker66.png" />
+    <Resource Include="Images\Stickers\Sticker67.png" />
+    <Resource Include="Images\Stickers\Sticker68.png" />
+    <Resource Include="Images\Stickers\Sticker69.png" />
+    <Resource Include="Images\Stickers\Sticker70.png" />
+    <Resource Include="Images\Stickers\Sticker71.png" />
+    <Resource Include="Images\Stickers\Sticker72.png" />
+    <Resource Include="Images\Stickers\Sticker73.png" />
+    <Resource Include="Images\Stickers\Sticker74.png" />
+    <Resource Include="Images\Stickers\Sticker75.png" />
+    <Resource Include="Images\Stickers\Sticker76.png" />
+    <Resource Include="Images\Stickers\Sticker77.png" />
+    <Resource Include="Images\Stickers\Sticker78.png" />
+    <Resource Include="Images\Stickers\Sticker79.png" />
+    <Resource Include="Images\Stickers\Sticker80.png" />
+    <Resource Include="Images\Stickers\Sticker81.png" />
+    <Resource Include="Images\Stickers\Sticker82.png" />
+    <Resource Include="Images\Stickers\Sticker83.png" />
+    <Resource Include="Images\Stickers\Sticker84.png" />
+    <Resource Include="Images\Stickers\Sticker85.png" />
+    <Resource Include="Images\Stickers\Sticker86.png" />
+    <Resource Include="Images\Stickers\Sticker87.png" />
+    <Resource Include="Images\Stickers\Sticker88.png" />
+    <Resource Include="Images\Stickers\Sticker89.png" />
+    <Resource Include="Images\Stickers\Sticker90.png" />
+    <Resource Include="Images\Stickers\Sticker91.png" />
+    <Resource Include="Images\Stickers\Sticker92.png" />
+    <Resource Include="Images\Stickers\Sticker93.png" />
+    <Resource Include="Images\Stickers\Sticker94.png" />
+    <Resource Include="Images\Stickers\Sticker95.png" />
+    <Resource Include="Images\Stickers\Sticker96.png" />
+    <Resource Include="Images\Stickers\Sticker97.png" />
+    <Resource Include="Images\Stickers\Sticker98.png" />
+    <Resource Include="Images\Stickers\Sticker99.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\costume.png" />
+    <Resource Include="Images\smartphone %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\webcam.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Backgrounds\O7MF5N0.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\video_call.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calling.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Decline_Call.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Backgrounds\ChatActivtyEmty.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Backgrounds\Nophone.png" />
+    <Resource Include="Images\Backgrounds\NoUser.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Backgrounds\SearchImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\SQLitePCLRaw.lib.e_sqlite3.linux.1.1.5\build\net35\SQLitePCLRaw.lib.e_sqlite3.linux.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\SQLitePCLRaw.lib.e_sqlite3.linux.1.1.5\build\net35\SQLitePCLRaw.lib.e_sqlite3.linux.targets'))" />
+    <Error Condition="!Exists('..\packages\SQLitePCLRaw.lib.e_sqlite3.osx.1.1.5\build\net35\SQLitePCLRaw.lib.e_sqlite3.osx.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\SQLitePCLRaw.lib.e_sqlite3.osx.1.1.5\build\net35\SQLitePCLRaw.lib.e_sqlite3.osx.targets'))" />
+    <Error Condition="!Exists('..\packages\SQLitePCLRaw.lib.e_sqlite3.v110_xp.1.1.5\build\net35\SQLitePCLRaw.lib.e_sqlite3.v110_xp.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\SQLitePCLRaw.lib.e_sqlite3.v110_xp.1.1.5\build\net35\SQLitePCLRaw.lib.e_sqlite3.v110_xp.targets'))" />
+    <Error Condition="!Exists('..\packages\cef.redist.x64.3.2987.1601\build\cef.redist.x64.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\cef.redist.x64.3.2987.1601\build\cef.redist.x64.targets'))" />
+    <Error Condition="!Exists('..\packages\cef.redist.x86.3.2987.1601\build\cef.redist.x86.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\cef.redist.x86.3.2987.1601\build\cef.redist.x86.targets'))" />
+    <Error Condition="!Exists('..\packages\CefSharp.Common.57.0.0\build\CefSharp.Common.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\CefSharp.Common.57.0.0\build\CefSharp.Common.props'))" />
+    <Error Condition="!Exists('..\packages\CefSharp.Common.57.0.0\build\CefSharp.Common.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\CefSharp.Common.57.0.0\build\CefSharp.Common.targets'))" />
+    <Error Condition="!Exists('..\packages\CefSharp.Wpf.57.0.0\build\CefSharp.Wpf.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\CefSharp.Wpf.57.0.0\build\CefSharp.Wpf.props'))" />
+    <Error Condition="!Exists('..\packages\CefSharp.Wpf.57.0.0\build\CefSharp.Wpf.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\CefSharp.Wpf.57.0.0\build\CefSharp.Wpf.targets'))" />
+    <Error Condition="!Exists('..\packages\Xamarin.Forms.2.3.4.224\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Xamarin.Forms.2.3.4.224\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets'))" />
+    <Error Condition="!Exists('..\packages\Fody.2.0.0\build\netstandard1.4\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Fody.2.0.0\build\netstandard1.4\Fody.targets'))" />
+  </Target>
+  <Import Project="..\packages\SQLitePCLRaw.lib.e_sqlite3.linux.1.1.5\build\net35\SQLitePCLRaw.lib.e_sqlite3.linux.targets" Condition="Exists('..\packages\SQLitePCLRaw.lib.e_sqlite3.linux.1.1.5\build\net35\SQLitePCLRaw.lib.e_sqlite3.linux.targets')" />
+  <Import Project="..\packages\SQLitePCLRaw.lib.e_sqlite3.osx.1.1.5\build\net35\SQLitePCLRaw.lib.e_sqlite3.osx.targets" Condition="Exists('..\packages\SQLitePCLRaw.lib.e_sqlite3.osx.1.1.5\build\net35\SQLitePCLRaw.lib.e_sqlite3.osx.targets')" />
+  <Import Project="..\packages\SQLitePCLRaw.lib.e_sqlite3.v110_xp.1.1.5\build\net35\SQLitePCLRaw.lib.e_sqlite3.v110_xp.targets" Condition="Exists('..\packages\SQLitePCLRaw.lib.e_sqlite3.v110_xp.1.1.5\build\net35\SQLitePCLRaw.lib.e_sqlite3.v110_xp.targets')" />
+  <Import Project="..\packages\cef.redist.x64.3.2987.1601\build\cef.redist.x64.targets" Condition="Exists('..\packages\cef.redist.x64.3.2987.1601\build\cef.redist.x64.targets')" />
+  <Import Project="..\packages\cef.redist.x86.3.2987.1601\build\cef.redist.x86.targets" Condition="Exists('..\packages\cef.redist.x86.3.2987.1601\build\cef.redist.x86.targets')" />
+  <Import Project="..\packages\CefSharp.Common.57.0.0\build\CefSharp.Common.targets" Condition="Exists('..\packages\CefSharp.Common.57.0.0\build\CefSharp.Common.targets')" />
+  <Import Project="..\packages\CefSharp.Wpf.57.0.0\build\CefSharp.Wpf.targets" Condition="Exists('..\packages\CefSharp.Wpf.57.0.0\build\CefSharp.Wpf.targets')" />
+  <Import Project="..\packages\Xamarin.Forms.2.3.4.224\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.4.224\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(SolutionDir)packages\CefSharp.Wpf.57.0.0\cef*" "$(TargetDir)" /s /y /i
+xcopy "$(ProjectDir)Lib\Microsoft.VC110.CRT*.*" "$(TargetDir)" /s /y /i</PostBuildEvent>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="$(SolutionDir)packages\cef.redist.x86.3.2987.1601\CEF\**\*" Exclude="$(SolutionDir)packages\cef.redist.x86.3.2987.1601\CEF\x86\**\*;$(SolutionDir)packages\cef.redist.x86.3.2987.1601\CEF\locales\**\*.pak">
+      <Link>%(RecursiveDir)%(Filename)%(Extension)</Link>
+      <Visible>false</Visible>
+    </Content>
+    <Resource Include="Images\Backgrounds\LoadingImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="$(SolutionDir)packages\cef.redist.x86.3.2987.1601\CEF\**\en-GB.*;$(SolutionDir)packages\cef.redist.x86.3.2987.1601\CEF\**\en-US.*">
+      <Link>%(RecursiveDir)%(Filename)%(Extension)</Link>
+      <Visible>false</Visible>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="$(SolutionDir)packages\cef.redist.x86.3.2987.1601\CEF\x86\**\*">
+      <Link>%(RecursiveDir)%(Filename)%(Extension)</Link>
+      <Visible>false</Visible>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="$(SolutionDir)packages\CefSharp.Common.57.0.0\CefSharp\x86\**\CefSharp.BrowserSubprocess.*">
+      <Link>%(RecursiveDir)%(Filename)%(Extension)</Link>
+      <Visible>false</Visible>
+    </Content>
+  </ItemGroup>
+  <Import Project="..\packages\Fody.2.0.0\build\netstandard1.4\Fody.targets" Condition="Exists('..\packages\Fody.2.0.0\build\netstandard1.4\Fody.targets')" />
+</Project>

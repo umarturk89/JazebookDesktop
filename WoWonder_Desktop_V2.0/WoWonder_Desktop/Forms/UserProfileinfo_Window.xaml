@@ -1,0 +1,206 @@
+﻿<Window x:Class="WoWonder_Desktop.Forms.UserProfileinfo_Window"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WoWonder_Desktop.Forms"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:properties="clr-namespace:WoWonder_Desktop.language"
+        mc:Ignorable="d"
+        WindowStyle="None" AllowsTransparency="True" WindowStartupLocation="CenterScreen"
+        Title="Edit_MyProfile_Window" Height="645" Width="650">
+
+    <Window.Resources>
+        <Style TargetType="{x:Type local:UserProfileinfo_Window}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Window}">
+                        <!-- Outer border with the dropshadow margin -->
+                        <Border Padding="{Binding OuterMarginSizeThickness, FallbackValue=10}">
+                            <!-- Main window outline -->
+                            <Grid>
+                                <!-- Opacity mask for corners on grid -->
+                                <Border x:Name="Container"
+                                        Background="{StaticResource BackgroundLightBrush}"
+                                        CornerRadius="10" />
+                                <!-- Window border and dropshadown -->
+                                <Border CornerRadius="10"
+                                        Background="White">
+                                    <Border.Effect>
+                                        <DropShadowEffect ShadowDepth="0" Opacity="0.2" />
+                                    </Border.Effect>
+                                </Border>
+                                <!-- The main window content -->
+                                <Grid  Loaded="FrameworkElement_OnLoaded">
+                                    <!-- Corner clipping -->
+                                    <Grid.OpacityMask>
+                                        <VisualBrush Visual="{Binding ElementName=Container}" />
+                                    </Grid.OpacityMask>
+                                    <Grid.RowDefinitions>
+                                        <!-- Title Bar -->
+                                        <RowDefinition Height="35" />
+                                        <!-- Window Content -->
+                                        <RowDefinition Height="*" />
+                                    </Grid.RowDefinitions>
+                                    <!-- Title Bar -->
+                                    <Grid Grid.Column="0" Panel.ZIndex="1">
+                                        <Grid.ColumnDefinitions>
+                                            <!-- Icon -->
+                                            <ColumnDefinition Width="Auto" />
+                                            <!-- Title -->
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="*" />
+                                            <!-- Windows Button -->
+                                            <ColumnDefinition Width="Auto" />
+                                        </Grid.ColumnDefinitions>
+                                        <!-- Icon -->
+                                        <Button Style="{StaticResource SystemIconButton}" Command="{Binding MenuCommand}">
+                                            <Image Source="/Images/icon.ico" />
+                                        </Button>
+                                        <!-- Title -->
+                                        <Viewbox Grid.Column="1" Margin="0">
+                                            <TextBlock Loaded="TitleApp_OnLoaded" FontSize="8" Style="{StaticResource HeaderText}" Text="User Profile information" />
+                                        </Viewbox>
+                                         <!-- Window Buttons -->
+                                        <StackPanel Grid.Column="3" Orientation="Horizontal">
+                                            <Button Loaded="Btn_Close_OnLoaded" x:Name="btn_Close" Style="{StaticResource WindowCloseButton}" Content="X" Click="Btn_Close_OnClick" />
+                                        </StackPanel>
+                                    </Grid>
+                                    <!-- Page Content -->
+                                    <Border Grid.Row="1" Padding="{Binding InnerContentPadding}">
+                                        <ContentPresenter Content="{TemplateBinding Content}" />
+                                    </Border>
+                                </Grid>
+                            </Grid>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+ 
+    <WindowChrome.WindowChrome>
+        <WindowChrome ResizeBorderThickness="6" CaptionHeight="30" CornerRadius="0" GlassFrameThickness="0" />
+    </WindowChrome.WindowChrome>
+
+    <Grid >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Grid x:Name="LeftGrid" Grid.Column="0" Background="{StaticResource BackgroundVeryLightBrush}" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="35" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Label x:Name="Lbl_Profile_Settings" Panel.ZIndex="1" FontWeight="Bold" VerticalAlignment="Center" Grid.Row="0" Margin="5,0,0,0" FontFamily="{StaticResource LatoBold}" Content="{x:Static properties:LocalResources.label_Profile_Settings}" Foreground="#444" HorizontalAlignment="Left"  FontSize="12" />
+            <Grid x:Name="Profile_SettingsGrid" Grid.Row="1" Margin="6,5,0,0" Background="White">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60" />
+                    <RowDefinition Height="60" />
+                    <RowDefinition Height="60" />
+                    <RowDefinition Height="60" />
+                    <RowDefinition Height="60" />
+                    <RowDefinition Height="60" />
+                    <RowDefinition Height="60" />
+                    <RowDefinition Height="60" />
+                    <RowDefinition Height="100" />
+                </Grid.RowDefinitions>
+
+                <materialDesign:PackIcon x:Name="Icon_Username" Margin="10,16,0,0"  Kind="Account" Foreground="{StaticResource ForegroundMainBrush}" Width="22" Height="22" />
+                <Label x:Name="Lbl_ucp_Username" FontSize="14" BorderBrush="#efefef" Grid.Column="1" Width="210"  HorizontalAlignment="Left" Margin="4,2,0,10" VerticalAlignment="Center" Content="Empty"  />
+
+                <materialDesign:PackIcon x:Name="Email_Icon" Margin="10,17,0,0" Grid.Row="1" Kind="Email" Foreground="{StaticResource ForegroundMainBrush}" Width="22" Height="22" />
+                <Label x:Name="Lbl_ucp_Email"  FontSize="14" BorderBrush="#efefef" Grid.Row="1"  Width="210"  HorizontalAlignment="Left" Grid.Column="1" Margin="4,2,0,10" VerticalAlignment="Center" Content="Empty"/>
+
+                <materialDesign:PackIcon x:Name="Birthday_Icon" Margin="10,17,0,0" Grid.Row="2" Kind="Calendar" Foreground="{StaticResource ForegroundMainBrush}" Width="22" Height="22" />
+                <Label x:Name="Lbl_ucp_Birthday"  FontSize="14" BorderBrush="#efefef"  Grid.Row="2"  Width="210"  Grid.Column="1"  HorizontalAlignment="Left" Margin="4 2 0 10" VerticalAlignment="Center" Content="Empty" />
+
+
+
+
+                <materialDesign:PackIcon x:Name="Phone_number_Icon" Margin="10,17,0,0" Grid.Row="3" Kind="Cellphone" Foreground="{StaticResource ForegroundMainBrush}" Width="22" Height="22" />
+                <Label  x:Name="Lbl_ucp_Phone_number" FontSize="14"  BorderBrush="#efefef" Grid.Row="3"  Width="210"  HorizontalAlignment="Left" Grid.Column="1" Margin="4,2,0,10" VerticalAlignment="Center" Content="Empty" />
+
+                <materialDesign:PackIcon x:Name="Website_Icon" Margin="10,17,0,0" Grid.Row="4" Kind="Web" Foreground="{StaticResource ForegroundMainBrush}" Width="22" Height="22" />
+                <Label x:Name="Lbl_ucp_Website" FontSize="14" BorderBrush="#efefef" Grid.Row="4"  Grid.Column="1"  Width="210"  HorizontalAlignment="Left" Margin="4,2,0,10" VerticalAlignment="Center" Content="Empty"  />
+
+                <materialDesign:PackIcon x:Name="Address_Icon" Margin="10,17,0,0" Grid.Row="5" Kind="GoogleMaps" Foreground="{StaticResource ForegroundMainBrush}" Width="22" Height="22" />
+                <Label x:Name="Lbl_ucp_Address" FontSize="14" BorderBrush="#efefef" Grid.Row="5"  Grid.Column="1" Width="210"  HorizontalAlignment="Left" Margin="4,2,0,10" VerticalAlignment="Center" Content="Empty" />
+
+                <materialDesign:PackIcon x:Name="School_Icon" Margin="10,17,0,0" Grid.Row="6" Kind="School" Foreground="{StaticResource ForegroundMainBrush}" Width="22" Height="22" />
+                <Label x:Name="Lbl_ucp_School" FontSize="14" BorderBrush="#efefef" Grid.Row="6"  Grid.Column="1" Width="210"  HorizontalAlignment="Left" Margin="4,2,0,10" VerticalAlignment="Center" Content="Empty"  />
+
+                <materialDesign:PackIcon x:Name="Gender_Icon" Margin="10,16,0,0" Grid.Row="7" Kind="GenderMaleFemale" Foreground="{StaticResource ForegroundMainBrush}" Width="22" Height="22" />
+                <Label x:Name="Lbl_ucp_Gender"  Grid.Row="7"  Grid.Column="1" FontSize="14" BorderBrush="#efefef"  Width="210"  HorizontalAlignment="Left" Margin="4,2,0,10" VerticalAlignment="Center" Content="Empty"  />
+
+
+                <materialDesign:PackIcon x:Name="About_me_Icon" Margin="10,16,0,0" Grid.Row="8" Kind="AlertCircle" Foreground="{StaticResource ForegroundMainBrush}" Width="22" Height="22" />
+                <Label x:Name="lbl_About_me" Grid.Row="8" Grid.Column="1" BorderBrush="#efefef" HorizontalAlignment="Left" VerticalAlignment="Top"  VerticalContentAlignment="Center"  Margin="4,12,0,0">
+                    <Label.Content>
+                        <AccessText TextWrapping="Wrap" Text="{x:Static properties:LocalResources.label_About_me}"/>
+                    </Label.Content>
+                </Label>
+               
+            </Grid>
+        </Grid>
+
+        <Grid x:Name="RightGrid" Grid.Column="1" Background="{StaticResource BackgroundVeryLightBrush}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="35" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Label  x:Name="Lbl_Social_Links" Panel.ZIndex="1" FontWeight="Bold" VerticalAlignment="Center" Grid.Row="0" Margin="5,4,0,0" FontFamily="{StaticResource LatoBold}" Content="{x:Static properties:LocalResources.label_Lbl_Social_Links}" Foreground="#444" HorizontalAlignment="Left"  FontSize="12" />
+            <Grid x:Name="Social_LinksGrid" Background="White" Grid.Row="1" Margin="0,5,0,0">
+                <Grid Grid.Row="1" Margin="0,5,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="60" />
+                        <RowDefinition Height="60" />
+                        <RowDefinition Height="60" />
+                        <RowDefinition Height="60" />
+                        <RowDefinition Height="60" />
+                        <RowDefinition Height="60" />
+                        <RowDefinition Height="60" />
+                        <RowDefinition Height="60" />
+                        <RowDefinition Height="60" />
+                    </Grid.RowDefinitions>
+                    <materialDesign:PackIcon Margin="10,17,0,0" Grid.Row="0" Kind="Facebook" Foreground="#3b5998" Width="22" Height="22" />
+                    <Label x:Name="Lbl_ucp_Facebook" FontSize="14" BorderBrush="#efefef" Grid.Column="1" Width="240"  HorizontalAlignment="Left" Margin="4,2,0,10"  VerticalAlignment="Center" Content="Empty" />
+
+                    <materialDesign:PackIcon Margin="10,17,0,0" Grid.Row="1" Kind="Google" Foreground="#DB4437" Width="22" Height="22" />
+                    <Label x:Name="Lbl_ucp_Google" FontSize="14" BorderBrush="#efefef" Grid.Column="1" Grid.Row="1" Width="240"  HorizontalAlignment="Left" VerticalAlignment="Center" Content="Empty" Margin="4,2,0,10"   />
+
+                    <materialDesign:PackIcon Margin="10,17,0,0" Grid.Row="2" Kind="Twitter" Foreground="#1DA1F2" Width="22" Height="22" />
+                    <Label x:Name="Lbl_ucp_Twitter" FontSize="14" BorderBrush="#efefef" Grid.Column="1" Grid.Row="2" Width="240"  HorizontalAlignment="Left" VerticalAlignment="Center" Content="Empty"  Margin="4,2,0,10"   />
+
+                    <materialDesign:PackIcon Margin="10,17,0,0" Grid.Row="3" Kind="YoutubePlay" Foreground="#DB4437" Width="22" Height="22" />
+                    <Label x:Name="Lbl_ucp_Youtube" FontSize="14" BorderBrush="#efefef" Grid.Column="1" Grid.Row="3" Width="240"  HorizontalAlignment="Left" VerticalAlignment="Center" Content="Empty"  Margin="4,2,0,10"  />
+
+                    <materialDesign:PackIcon Margin="10,17,0,0" Grid.Row="4" Kind="Linkedin" Foreground="#007bb6" Width="22" Height="22" />
+                    <Label x:Name="Lbl_ucp_Linkedin" FontSize="14" BorderBrush="#efefef" Grid.Column="1" Grid.Row="4" Width="240"  HorizontalAlignment="Left" Margin="4,2,0,10" VerticalAlignment="Center" Content="Empty"  />
+
+                    <materialDesign:PackIcon Margin="10,17,0,0" Grid.Row="5" Kind="Instagram" Foreground="#bc2a8d" Width="22" Height="22" />
+                    <Label x:Name="Lbl_ucp_Instagram" FontSize="14" BorderBrush="#efefef" Grid.Column="1" Grid.Row="5" Width="240"  HorizontalAlignment="Left" Margin="4,2,0,10" VerticalAlignment="Center" Content="Empty"  />
+
+                    <materialDesign:PackIcon Margin="10,17,0,0" Grid.Row="6" Kind="Vk" Foreground="#4c75a3" Width="22" Height="22" />
+                    <Label x:Name="Lbl_ucp_Vk" FontSize="14" BorderBrush="#efefef" Grid.Column="1" Grid.Row="6" Width="240"  HorizontalAlignment="Left" Margin="4,2,0,10" VerticalAlignment="Center" Content="Empty" />
+
+                    <Button x:Name="Btn_CloseProfile" Grid.Column="1" Grid.Row="8" HorizontalAlignment="Right" materialDesign:ShadowAssist.ShadowDepth="Depth0" Margin="13,0,13,0" Content="{x:Static properties:LocalResources.label_Btn_CloseProfile}"
+                            FontSize="11" Foreground="White" HorizontalContentAlignment="Center" Width="150" Click="Btn_CloseProfile_OnClick"/>
+
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

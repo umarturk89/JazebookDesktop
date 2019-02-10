@@ -1,0 +1,27 @@
+﻿<Window x:Class="WoWonder_Desktop.Forms.SocialLogin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:properties="clr-namespace:WoWonder_Desktop.language"
+        xmlns:local="clr-namespace:WoWonder_Desktop.Forms" 
+        xmlns:wpf="clr-namespace:CefSharp.Wpf;assembly=CefSharp.Wpf"
+        mc:Ignorable="d"
+        Title="Social Login" Height="500" Width="900" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    
+    <StackPanel x:Name="Panel">
+        <StackPanel Background="#ffff"  x:Name="LoadingPanel" ZIndex="0" VerticalAlignment="Center" HorizontalAlignment="Stretch"  Visibility="Visible" Margin="0,0,0,0" >
+            <ProgressBar Style="{StaticResource MaterialDesignCircularProgressBar}"                     
+                         Value="35" Foreground="#a84849"
+                         IsIndeterminate="True"
+                         Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 11 0 0">
+            </ProgressBar>
+            <Label x:Name="Lbl_Loading" Foreground="Black" Content="{x:Static properties:LocalResources.label_Loading}" Margin="0,8,0,0" HorizontalAlignment="Center" FontSize="16"/>
+            <Label x:Name="Lbl_connection" Foreground="Black" Content="{x:Static properties:LocalResources.label_connection}" Margin="0,8,0,0" HorizontalAlignment="Center" FontSize="16"/>
+        </StackPanel>
+        <StackPanel>
+            <wpf:ChromiumWebBrowser x:Name="SocialLoginbrowser" LoadingStateChanged="SocialLoginbrowser_OnLoadingStateChanged" Height="500" VerticalAlignment="Stretch"></wpf:ChromiumWebBrowser>
+        </StackPanel>
+    </StackPanel>
+</Window>
+
